@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Search from "./components/Search";
+import {Router} from '@reach/router';
+import Person from "./components/Person";
+import Species from "./components/Species";
+import Starship from "./components/Starship";
+import Planet from "./components/Planet";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Search />
+      <Router>
+        <Person path="/people/:id"/>
+        <Species path="/species/:id"/>
+        <Starship path="/starships/:id"/>
+        <Planet path="/planets/:id"/>
+      </Router>
+
     </div>
   );
 }
